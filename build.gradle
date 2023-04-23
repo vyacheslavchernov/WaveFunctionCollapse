@@ -1,0 +1,23 @@
+apply plugin: "java-library"
+apply plugin: "java"
+apply plugin: "application"
+
+ext {
+    gdxVersion = '1.11.0'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    api "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+    implementation "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
+
+    implementation 'com.github.vyacheslavchernov:GdxFramework:release_0.0.0'
+}
